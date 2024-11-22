@@ -1,23 +1,43 @@
-import { View, Text, StyleSheet } from "react-native"
+import { Feather } from "@expo/vector-icons"
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native"
 
 function WelcomeScreen() {
   return (
-    <View style={styles.welcomeView}>
-      <Text style={styles.viewFont("red", 600, "normal")}>Welcome</Text>
-      <Text style={styles.viewFont("blue", 600, "italic")}>To the React Native Course</Text>
+    <View >
+      <View style={styles.welcomeView}>
+        <Text style={styles.viewFont(40, "red", "normal", 500)}>Find the Most</Text>
+        <Text style={styles.viewFont(45, "blue", "normal", 600)}>Luxurious Goodies</Text>
+      </View>
+      <View>
+        <TouchableOpacity
+          onPress={() => {
+            console.log("Search button pressed")
+          }}
+        >
+          <Feather name="search" size={25} style={styles.searchICon} />
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  welcomeView: { flex: 0.4, justifyContent: "center", alignItems: "center" },
-  viewFont: (color, weight, style) => ({
-    fontsize: 18,
-    color: color,
-    fontWeight: 600,
-    fontStyle:style
+  welcomeView: { flex: 0.5, justifyContent: "center", alignItems: "center", marginTop:100},
 
+  viewFont: (size, color, style, weight) => ({
+    fontSize: size,
+    color: color,
+    fontStyle: style,
+    fontWeight: weight,
   }),
+
+  
+  searchICon: {
+    color: "grey",
+    marginTop:20,
+    marginLeft: 20,
+    alignItems: "flex-start",
+  },
 })
 
 export default WelcomeScreen
@@ -30,3 +50,7 @@ export default WelcomeScreen
 
 /**To create a reusable style component, give it the attributes you need to change in the stylesheet
  * and change them in the component */
+
+/**To use icons we install the required library: npx expo install @expo/vector-icons
+ * use the Feather library
+ */
