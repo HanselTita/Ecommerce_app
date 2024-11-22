@@ -1,12 +1,5 @@
 import { Text, View, StyleSheet } from "react-native"
-
-function WelcomeScreen() {
-  return (
-    <View style={styles.welcomeView}>
-      <Text>Welcome to the React Native Course</Text>
-    </View>
-  )
-}
+import WelcomeScreen from "./src/components/WelcomeView"
 
 export default function App() {
   return (
@@ -29,8 +22,6 @@ const styles = StyleSheet.create({
   topView: { flex: 0.3, alignItems: "center", justifyContent: "center", backgroundColor: "#bbb" },
 
   bottomView: { flex: 0.3, alignItems: "center", justifyContent: "center", backgroundColor: "#aca6a6" },
-
-  welcomeView: { flex: 0.4, justifyContent: "center", alignItems: "center" },
 })
 
 /**Creating a component and running it in the default component
