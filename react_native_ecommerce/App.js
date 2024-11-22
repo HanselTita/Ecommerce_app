@@ -1,13 +1,19 @@
-import { Text, View, StyleSheet } from "react-native"
+import { Text, View, StyleSheet, TouchableOpacity } from "react-native"
 import WelcomeScreen from "./src/components/WelcomeView"
 
 export default function App() {
   return (
     <View style={styles.container}>
       <WelcomeScreen />
-      <View style={styles.box}>
-        <Text style={{fontSize:24, fontWeight:"600"}}>Hello There from Hanstech</Text>
-      </View>
+      <TouchableOpacity
+        onPress={() => {
+          console.log("Button pressed")
+        }}
+      >
+        <View style={styles.box}>
+          <Text style={{ fontSize: 24, fontWeight: "600" }}> "Welcome to Hanstech"</Text>
+        </View>{" "}
+      </TouchableOpacity>
     </View>
   )
 }
@@ -15,9 +21,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: { flex: 1 },
 
-  box: { flex: 0.3, alignItems: "center", justifyContent: "center", backgroundColor: "#bbb",
-    margin:30, borderRadius:10, padding:30
-   },
+  box: { alignItems: "center", justifyContent: "center", backgroundColor: "#bbb", margin: 30, borderRadius: 10, padding: 30 },
 })
 
 /**Creating a component and running it in the default component
@@ -26,3 +30,5 @@ const styles = StyleSheet.create({
  * */
 
 /** margin give you spacing outside your view while padding gives you spaving within your view */
+
+/**Adding touchableOpacity with replaces onClick of javascript */
