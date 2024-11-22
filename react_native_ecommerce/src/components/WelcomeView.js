@@ -3,13 +3,14 @@ import { View, Text, StyleSheet } from "react-native"
 function WelcomeScreen() {
     return (
       <View style={styles.welcomeView}>
-        <Text>Welcome to the React Native Course</Text>
+        <Text style={styles.viewFont}>Welcome to the React Native Course</Text>
       </View>
     )
   }
 
   const styles = StyleSheet.create({
-    welcomeView: { flex: 0.4, justifyContent: "center", alignItems: "center" },
+    welcomeView: { flex: 0.4, justifyContent: "center", alignItems: "center", },
+    viewFont: {fontSize:20, fontWeight:600}
   })
 
   export default WelcomeScreen;
