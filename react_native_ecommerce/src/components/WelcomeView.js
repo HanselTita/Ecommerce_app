@@ -1,31 +1,28 @@
-import { Feather, Ionicons } from "@expo/vector-icons";
-import { View, Text, StyleSheet, TouchableOpacity, TextInput } from "react-native";
+import { Feather, Ionicons } from "@expo/vector-icons"
+import { View, Text, StyleSheet, TouchableOpacity, TextInput } from "react-native"
 
 function WelcomeView() {
-
   return (
-    <View style={{ }}>
+    <View style={{}}>
       <View>
         <Text style={styles.welcomeTxt("#000", 70)}>Find The Most</Text>
 
         <Text style={styles.welcomeTxt("#2A4D50", 0)}>Luxurious Furniture</Text>
       </View>
       <View style={styles.searchContainer}>
-
-        <TouchableOpacity onPress={()=>{
-          console.log("I am tapped");
-        }}>
-          <Feather name = "search" size={24} style={styles.searchIcon}/>
+        <TouchableOpacity
+          onPress={() => {
+            console.log("I am tapped")
+          }}
+        >
+          <Feather name="search" size={24} style={styles.searchIcon} />
         </TouchableOpacity>
-
-        <TextInput   
-          placeholder="What are you looking for"
-          style={styles.searchInput}
-        />
-         
+        <View style={styles.searchWrapper}>
+          <TextInput placeholder="What are you looking for" style={styles.searchInput} />
+        </View>
       </View>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -33,28 +30,30 @@ const styles = StyleSheet.create({
     fontSize: 38,
     color: color,
     marginTop: top,
-    marginHorizontal:12
+    marginHorizontal: 12,
   }),
 
-  searchIcon:{
-    marginTop:12,
-    color:"#83829A",
-    marginLeft:10
+  searchIcon: {
+    marginTop: 12,
+    color: "#83829A",
+    marginLeft: 10,
   },
-  searchContainer:{
-    flexDirection:"row",
-    justifyContent:"center",
-    height:50,
-    marginHorizontal:16
+  searchContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    height: 50,
+    marginHorizontal: 16,
   },
-  searchInput:{
-    width:"100%"
-  }
+  searchInput: {
+    width: "100%",
+    height: "100%",
+  },
+  searchWrapper: {
+    flex: 1,
+  },
+})
 
-});
-
-export default WelcomeView;
-
+export default WelcomeView
 
 /** In creating component use the pascal style code. First word caplock, next word if any caplock, no spacing
  * Then you must import the class and components you will use from the react native library
