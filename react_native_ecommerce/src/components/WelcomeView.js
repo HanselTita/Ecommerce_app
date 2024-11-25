@@ -20,7 +20,11 @@ function WelcomeView() {
         <View style={styles.searchWrapper}>
           <TextInput placeholder="What are you looking for" style={styles.searchInput} />
         </View>
+        <View style={styles.searchBtn}>
+        <Ionicons name="camera-outline" size={36}/>
       </View>
+      </View>
+     
     </View>
   )
 }
@@ -50,7 +54,11 @@ const styles = StyleSheet.create({
   },
   searchWrapper: {
     flex: 1,
+    backgroundColor:"#daf081"
   },
+  searchBtn:{
+    justifyContent:"center"
+  }
 })
 
 export default WelcomeView
