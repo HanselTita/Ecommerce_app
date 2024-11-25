@@ -2,7 +2,7 @@ import { Feather, Ionicons } from "@expo/vector-icons"
 import { View, Text, StyleSheet, TouchableOpacity, TextInput } from "react-native"
 import { theme } from "./theme"
 
-function WelcomeView() {
+function WelcomeComponent() {
   return (
     <View style={{}}>
       <View>
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   },
 })
 
-export default WelcomeView
+export default WelcomeComponent
 
 /** In creating component use the pascal style code. First word caplock, next word if any caplock, no spacing
  * Then you must import the class and components you will use from the react native library
