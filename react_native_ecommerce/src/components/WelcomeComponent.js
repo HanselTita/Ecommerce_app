@@ -1,13 +1,14 @@
 import { Feather, Ionicons } from "@expo/vector-icons"
 import { View, Text, StyleSheet, TouchableOpacity, TextInput } from "react-native"
+import { theme } from "./theme"
 
 function WelcomeView() {
   return (
     <View style={{}}>
       <View>
-        <Text style={styles.welcomeTxt("#000", 70)}>Find The Most</Text>
+        <Text style={styles.welcomeTxt(theme.colors.black, 70)}>Find The Most</Text>
 
-        <Text style={styles.welcomeTxt("#2A4D50", 0)}>Luxurious Furniture</Text>
+        <Text style={styles.welcomeTxt(theme.colors.gray, 0)}>Luxurious Furniture</Text>
       </View>
       <View style={styles.searchContainer}>
         <TouchableOpacity
@@ -15,16 +16,15 @@ function WelcomeView() {
             console.log("I am tapped")
           }}
         >
-          <Feather name="search" size={24} style={styles.searchIcon} />
+          <Feather name="search" size={theme.sizes.xlarge} style={styles.searchIcon} />
         </TouchableOpacity>
         <View style={styles.searchWrapper}>
           <TextInput placeholder="What are you looking for" style={styles.searchInput} />
         </View>
         <View style={styles.searchBtn}>
-        <Ionicons name="camera-outline" size={36}/>
+          <Ionicons name="camera-outline" size={36} color={theme.colors.offwhite} />
+        </View>
       </View>
-      </View>
-     
     </View>
   )
 }
@@ -34,19 +34,22 @@ const styles = StyleSheet.create({
     fontSize: 38,
     color: color,
     marginTop: top,
-    marginHorizontal: 12,
+    marginHorizontal: theme.sizes.small,
   }),
 
   searchIcon: {
-    marginTop: 12,
-    color: "#83829A",
+    marginTop: theme.sizes.small,
+    color: theme.colors.gray,
     marginLeft: 10,
   },
   searchContainer: {
     flexDirection: "row",
     justifyContent: "center",
     height: 50,
-    marginHorizontal: 16,
+    marginHorizontal: theme.sizes.small,
+    backgroundColor: theme.colors.secondary,
+    borderRadius: theme.sizes.medium,
+    marginVertical: theme.sizes.medium,
   },
   searchInput: {
     width: "100%",
@@ -54,11 +57,17 @@ const styles = StyleSheet.create({
   },
   searchWrapper: {
     flex: 1,
-    backgroundColor:"#daf081"
+    backgroundColor: theme.colors.secondary,
+    borderRadius: theme.sizes.small,
+    marginRight: theme.sizes.small,
   },
-  searchBtn:{
-    justifyContent:"center"
-  }
+  searchBtn: {
+    justifyContent: "center",
+    width: 50,
+    backgroundColor: theme.colors.primary,
+    alignItems: "center",
+    borderRadius: theme.sizes.small,
+  },
 })
 
 export default WelcomeView
@@ -74,4 +83,5 @@ export default WelcomeView
 
 /**To use icons we install the required library: npx expo install @expo/vector-icons
  * use the Feather library
+ * Use Ionicon for camera icon, name "camera-outline"
  */
