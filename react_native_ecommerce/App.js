@@ -1,27 +1,39 @@
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native"
-import WelcomeScreen from "./src/components/WelcomeView"
+import { Text, View, StyleSheet } from "react-native"
+import WelcomeView from "./src/components/WelcomeView"
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <WelcomeScreen />
-      <TouchableOpacity
-        onPress={() => {
-          console.log("Button pressed")
-        }}
-      >
-        <View style={styles.box}>
-          <Text style={{ fontSize: 24, fontWeight: "600" }}> "Welcome to Hanstech"</Text>
-        </View>{" "}
-      </TouchableOpacity>
+      <WelcomeView />
+
+      <View style={styles.box}>
+        <Text style={{ fontSize: 20 }}>Hello</Text>
+        <Text style={{ fontSize: 22 }}>Let's program in</Text>
+        <Text style={{ fontSize: 25 }}>React Native</Text>
+      </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
+  container: {
+    flexDirection: "column",
+    flex: 1,
+    alignItems: "center",
 
-  box: { alignItems: "center", justifyContent: "center", backgroundColor: "#bbb", margin: 30, borderRadius: 10, padding: 30 },
+    backgroundColor: "#bbb",
+  },
+
+  box: {
+    flexDirection: "column",
+
+    backgroundColor: "#ddd",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    marginTop: 10,
+    padding: 40,
+  },
 })
 
 /**Creating a component and running it in the default component
