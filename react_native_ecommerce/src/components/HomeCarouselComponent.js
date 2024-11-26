@@ -1,4 +1,4 @@
-import { FlatList, Image, View } from "react-native"
+import { FlatList, Image, View,Text } from "react-native"
 import { theme } from "./theme"
 
 const myArray = [
@@ -24,8 +24,8 @@ const HomeCarouselComponent = () => {
      <View>
       <FlatList
       data={myArray}
-      renderItem={()=>{
-  return ( <Text>Hello </Text>
+      renderItem={({item})=>{
+  return ( <Text>{item.title} </Text>
 
           )
         }}
@@ -40,5 +40,6 @@ export default HomeCarouselComponent
 
 /** overflow is used to cut out those parts of a content that overlap their boundaries. 
  * Flatlist is like a loop that cycles the according to the number of item given.
- * In a Flatlist the data is the array, the renderItem returns the component
+ * In a Flatlist the data is the array, the renderItem returns a component
+ * in the component call and item and tell it what to return, in our case "title"
 */
