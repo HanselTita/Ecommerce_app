@@ -1,9 +1,16 @@
 
 import HomeScreen from "./src/screens/HomeScreen"
+import { NavigationContainer } from "@react-navigation/native"
+import {CreateNativeStackNavigator} from "@react-navigation/native-stack"
 
+const Stack = CreateNativeStackNavigator();
 export default function App() {
   return (
-  <HomeScreen/>
+ <NavigationContainer>
+  <Stack.Navigator>
+    <Stack.Screen name="HomeScreen" component={HomeScreen}/>
+      </Stack.Navigator>
+ </NavigationContainer>
   )
 }
 
@@ -18,4 +25,12 @@ export default function App() {
 /**Adding touchableOpacity with replaces onClick of javascript */
 
 /** It is cleaner to use SafeAreaView, which comes with its own components
- *  and remove the View Items */
+ *  and remove the View Items 
+ * 
+ *  npm install @react-navigation/native
+ *  npm install @react-navigation/native-stack  helps in navigating in our app
+ * npm install react-native-screens react-native-safe-area-context 
+ * helps to maintain screen size
+ * import NavigationContainer and CreateNativeStackNavigator
+ * and incorporate the HomeScreen inside NavigationContainer and 
+ * Stack.Navigator as Stack.Screen component*/
