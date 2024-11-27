@@ -1,5 +1,14 @@
-import { FlatList, Image, View,Text } from "react-native"
+import { FlatList, Image, View,Text, Dimensions } from "react-native"
 import { theme } from "./theme"
+
+const {width} = Dimensions.get("window")
+
+const images = [
+  {id:"1A", path: require("../../assets/img/fn5.jpg")},
+  {id:"1B", path: require("../../assets/img/fn3.jpg")},
+  {id:"1C", path: require("../../assets/img/fn2.jpg")},
+  
+]
 
 const myArray = [
   {id:"1", title:"item 1"},
@@ -14,18 +23,17 @@ const HomeCarouselComponent = () => {
   return (
     <View>
       <View style={{height:200,
-     backgroundColor:"#bbb", 
      marginHorizontal:theme.sizes.medium,
      borderRadius:theme.sizes.medium,
      justifyContent:"center",
      overflow:"hidden"}}>
-    <Image style={{resizeMode:"cover", height:"100%", width:"100%"}}source={require("../../assets/img/fn1.jpg")} />
-     </View>
-     <View>
       <FlatList
-      data={myArray}
-      renderItem={({item})=><Text>{item.title} </Text>}
+      data={images}
+      renderItem={({item})=><Image style={{resizeMode:"cover", height:"100%", width:width}}
+      source={images.path} />}
       keyExtractor={item=>item.id}
+      horizontal
+      pagingEnabled
         />
      </View>
     </View>
