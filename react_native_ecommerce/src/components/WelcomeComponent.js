@@ -1,7 +1,8 @@
 import { Feather, Ionicons } from "@expo/vector-icons"
 import { View, Text, StyleSheet, TouchableOpacity, TextInput } from "react-native"
 import { theme } from "./theme"
-import styles from "../styles/welcome.style"
+import styles from "../../styles"
+
 
 
 function WelcomeComponent() {

@@ -1,7 +1,7 @@
 import { Text, View, TouchableOpacity } from "react-native"
 import { Entypo } from "@expo/vector-icons";
-import styles from "../styles/heading.style";
 import { theme } from "./theme";
+import styles from "../../styles";
 
 
 
