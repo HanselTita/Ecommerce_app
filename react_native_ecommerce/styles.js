@@ -31,6 +31,7 @@ welcomeTxt: (color, top) => ({
     color: theme.colors.gray,
     marginLeft: 10,
   },
+
   searchContainer: {
     flexDirection: "row",
     justifyContent: "center",
@@ -40,16 +41,19 @@ welcomeTxt: (color, top) => ({
     borderRadius: theme.sizes.medium,
     marginVertical: theme.sizes.medium,
   },
+
   searchInput: {
     width: "100%",
     height: "100%",
   },
+
   searchWrapper: {
     flex: 1,
     backgroundColor: theme.colors.secondary,
     borderRadius: theme.sizes.small,
     marginRight: theme.sizes.small,
   },
+
   searchBtn: {
     justifyContent: "center",
     width: 50,
@@ -68,9 +72,20 @@ welcomeTxt: (color, top) => ({
   text: {
     fontSize:20,
     fontWeight:'bold'
-  }
+  },
 
+imageContainer:{
+flex:1,
+alignItems:"center",
+height:180,
+overflow:"hidden",
+margin:10,
+},
 
+image:{
+  width:"100%",
+  height:"100%"
+}
 })
 
 export default styles;

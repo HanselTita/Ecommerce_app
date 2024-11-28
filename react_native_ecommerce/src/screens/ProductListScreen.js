@@ -1,5 +1,6 @@
 import { View, Text, FlatList, SafeAreaView, Image } from 'react-native'
 import React from 'react'
+import styles from '../../styles'
 
 const localProductList = [
   {id:"1A", path: require("../../assets/img/fn5.jpg")},
@@ -11,8 +12,8 @@ const localProductList = [
 export default function ProductList() {
   const renderItem =({item})=>{
     return (
-      <View style={{width:180, height:180}}>
-      <Image
+      <View style={styles.imageContainer}>
+      <Image style={styles.image}
       source={item.path}
     />
       </View>
@@ -24,6 +25,7 @@ export default function ProductList() {
     data={localProductList}
     renderItem={renderItem}
         keyExtractor={(item) => item.id}
+        numColumns={2}
     />
     </SafeAreaView>
     
@@ -32,5 +34,5 @@ export default function ProductList() {
 
 /**Notice we have export default at begining of our function.
  * That means no need to export default at the end of your code
- * 
+ * introduce numColumn and generate style for productlist
  */
