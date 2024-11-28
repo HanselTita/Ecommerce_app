@@ -57,6 +57,20 @@ welcomeTxt: (color, top) => ({
     alignItems: "center",
     borderRadius: theme.sizes.small,
   },
+
+  dummyContainer: {
+    flex:1,
+    justifyContent:"center",
+    alignItems:"center",
+    backgroundColor:"#fff"
+
+  },
+  text: {
+    fontSize:20,
+    fontWeight:'bold'
+  }
+
+
 })
 
 export default styles;

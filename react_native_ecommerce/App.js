@@ -1,14 +1,16 @@
 
 import HomeScreen from "./src/screens/HomeScreen"
 import { NavigationContainer } from "@react-navigation/native"
-import {CreateNativeStackNavigator} from "@react-navigation/native-stack"
+import {createNativeStackNavigator} from "@react-navigation/native-stack"
+import DummyScreen from "./src/screens/DummyScreen"
 
-const Stack = CreateNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 export default function App() {
   return (
  <NavigationContainer>
   <Stack.Navigator>
-    <Stack.Screen name="HomeScreen" component={HomeScreen}/>
+    <Stack.Screen name="HomePage" component={HomeScreen}/>
+    <Stack.Screen name="DummyPage" component={DummyScreen}/>
       </Stack.Navigator>
  </NavigationContainer>
   )
