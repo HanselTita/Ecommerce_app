@@ -77,7 +77,7 @@ welcomeTxt: (color, top) => ({
 imageContainer:{
 flex:1,
 alignItems:"center",
-height:220,
+height:230,
 overflow:"hidden",
 margin:10,
 borderRadius:theme.sizes.small

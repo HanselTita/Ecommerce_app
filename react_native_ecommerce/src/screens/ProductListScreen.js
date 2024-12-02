@@ -3,10 +3,10 @@ import React from 'react'
 import styles from '../../styles'
 
 const localProductList = [
-  {id:"1A", path: require("../../assets/img/fn5.jpg")},
-  {id:"1B", path: require("../../assets/img/fn3.jpg")},
-  {id:"1C", path: require("../../assets/img/fn2.jpg")},
-  {id:"1D", path: require("../../assets/img/fn4.jpg")},
+  {id:"1A", title: "classic furniture", price:"$300", path: require("../../assets/img/fn5.jpg")},
+  {id:"1B", title: "beautiful furniture", price:"$200",path: require("../../assets/img/fn3.jpg")},
+  {id:"1C", title: "comfy sofa", price:"$100", path: require("../../assets/img/fn2.jpg")},
+  {id:"1D", title: "vintage furniture", price:"$250",path: require("../../assets/img/fn4.jpg")},
 ]
 
 export default function ProductList() {
@@ -16,8 +16,9 @@ export default function ProductList() {
       <Image style={styles.image}
       source={item.path}
     />
-    <View>
-      <Text>Title</Text>
+    <View style={styles.details}>
+      <Text>{item.title}</Text>
+      <Text>{item.price}</Text>
     </View>
       </View>
    
