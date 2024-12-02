@@ -6,7 +6,7 @@ const localProductList = [
   {id:"1A", path: require("../../assets/img/fn5.jpg")},
   {id:"1B", path: require("../../assets/img/fn3.jpg")},
   {id:"1C", path: require("../../assets/img/fn2.jpg")},
-  
+  {id:"1D", path: require("../../assets/img/fn4.jpg")},
 ]
 
 export default function ProductList() {
@@ -16,6 +16,9 @@ export default function ProductList() {
       <Image style={styles.image}
       source={item.path}
     />
+    <View>
+      <Text>Title</Text>
+    </View>
       </View>
    
   )}
