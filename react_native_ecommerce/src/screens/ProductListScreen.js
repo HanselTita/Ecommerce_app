@@ -1,6 +1,6 @@
 import { View, Text, FlatList, SafeAreaView, Image } from 'react-native'
 import React from 'react'
-import styles from '../../styles'
+import ProductCardComponent from '../components/ProductCardComponent'
 
 const localProductList = [
   {id:"1A", title: "classic furniture", price:"$300", path: require("../../assets/img/fn5.jpg")},
@@ -10,30 +10,23 @@ const localProductList = [
 ]
 
 export default function ProductList() {
+
   const renderItem =({item})=>{
     return (
-      <View style={styles.imageContainer}>
-      <Image style={styles.image}
-      source={item.path}
-    />
-    <View style={styles.details}>
-      <Text>{item.title}</Text>
-      <Text>{item.price}</Text>
-    </View>
-      </View>
-   
-  )}
+      <ProductCardComponent item={item}/>
+    );
+  }
+
   return (
     <SafeAreaView>
-<FlatList
-    data={localProductList}
-    renderItem={renderItem}
-        keyExtractor={(item) => item.id}
+      <FlatList 
+        data={localProductList}
+        renderItem={renderItem}
+        keyExtractor={(item)=>item.id}
         numColumns={2}
-    />
+      />
     </SafeAreaView>
-    
-  )
+  );
 }
 
 /**Notice we have export default at begining of our function.
